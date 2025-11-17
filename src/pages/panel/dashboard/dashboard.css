@@ -1,0 +1,1061 @@
+/* Dashboard Layout Styles */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  /* Updated background to warm-gray neutral for professional appearance */
+  background-color: #f9fafb;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  /* replaced solid background with subtle vertical gradient (#FF6A00 to #FF7E1B) for modern SaaS look */
+  background: linear-gradient(180deg, #ff6a00 0%, #ff7e1b 100%);
+  border-right: 3px solid #d35400;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  /* Enhanced shadow for professional depth, and added inner shadow on right edge for visual separation */
+  box-shadow: 2px 0 12px rgba(211, 84, 0, 0.2), inset -1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+.sidebar.sidebar-closed {
+  width: 80px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  /* Updated border to match new color scheme */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  /* Updated toggle background with refined transparency */
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.sidebar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  overflow-y: auto;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  position: relative;
+}
+
+/* Updated hover state with subtle brightness increase */
+.sidebar-item:hover {
+  filter: brightness(1.05);
+  color: #ffffff;
+}
+
+/* Updated active state with left border, bright background, and white text */
+.sidebar-item.active {
+  background-color: #ff7a1c;
+  color: #ffffff;
+  font-weight: 600;
+  border-left: 3px solid #ffffff;
+  padding-left: calc(1rem - 3px);
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.sidebar-label {
+  white-space: nowrap;
+}
+
+.sidebar.sidebar-closed .sidebar-label {
+  display: none;
+}
+
+.sidebar-footer {
+  padding: 1rem 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logout {
+  width: 100%;
+  justify-content: flex-start;
+  /* Logout text slightly dimmer */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar-logout:hover {
+  /* Logout hover shows brand orange for visual feedback, added filter brightness effect to maintain consistency with other hover effects */
+  filter: brightness(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ff6a00;
+}
+
+/* Top Bar Styles */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  /* Added warm accent tint background for brand connection */
+  background: linear-gradient(90deg, #fff8f4 0%, #ffffff 100%);
+  /* Enhanced navbar shadow for better visual separation */
+  border-bottom: 1px solid #e6e6e6;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  /* Changed text color to dark gray for professional appearance */
+  color: #ff6a00;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.top-bar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  /* Updated border to soft gray */
+  border: 2px solid #e6e6e6;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all 0.2s;
+  /* Changed icon color to brand orange */
+  color: #ff6a00;
+}
+
+.top-bar-icon:hover {
+  background-color: #f5f6fa;
+  border-color: #ff6a00;
+}
+
+.top-bar-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  /* Updated border to brand orange */
+  border: 2px solid #ff6a00;
+  background: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.top-bar-avatar:hover {
+  border-color: #ff8533;
+  box-shadow: 0 0 8px rgba(255, 106, 0, 0.2);
+}
+
+.top-bar-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dashboard Content Styles */
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  /* Added optional subtle gradient for ambient warmth and depth */
+  background: linear-gradient(180deg, #fff9f6 0%, #f9fafb 100%);
+}
+
+.dashboard-section {
+  margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* KPI Cards */
+.kpi-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .kpi-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  /* Enhanced shadow for better depth and professional appearance */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.kpi-card:hover {
+  /* Refined hover shadow for professional feedback */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: #ff6a00;
+  transform: translateY(-2px);
+}
+
+.kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.kpi-icon {
+  font-size: 1.5rem;
+  color: #ff6a00;
+}
+
+.kpi-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.kpi-trend.positive {
+  color: #28a745;
+  background-color: #d4edda;
+}
+
+.kpi-trend.negative {
+  color: #dc3545;
+  background-color: #f8d7da;
+}
+
+.kpi-label {
+  font-size: 0.875rem;
+  /* Updated to secondary gray per typography specs */
+  color: #555555;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  /* Updated to primary dark gray per typography specs */
+  color: #1e1e1e;
+}
+
+/* Chart Styles */
+.dashboard-chart-section {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  /* Enhanced shadow for professional depth */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.chart-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  /* Updated to primary dark gray */
+  color: #1e1e1e;
+}
+
+.date-range-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.date-range-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e6e6e6;
+  background: white;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  /* Updated to secondary gray */
+  color: #555555;
+  transition: all 0.2s;
+}
+
+.date-range-btn:hover {
+  border-color: #ff6a00;
+  background-color: #f9fafb;
+  color: #ff6a00;
+}
+
+/* Updated active button to solid brand orange */
+.date-range-btn.active {
+  background: #ff6a00;
+  color: white;
+  border-color: #ff6a00;
+}
+
+.trend-chart {
+  height: 300px;
+}
+
+.chart-container {
+  display: flex;
+  height: 100%;
+  gap: 1rem;
+}
+
+.chart-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  min-width: 80px;
+}
+
+.y-label {
+  font-size: 0.75rem;
+  color: #cccccc;
+}
+
+.chart-area {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.chart-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+/* Updated chart bar to solid brand orange */
+.chart-bar {
+  width: 100%;
+  background: #ff6a00;
+  border-radius: 0.375rem 0.375rem 0 0;
+  min-height: 4px;
+  position: relative;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.chart-bar:hover {
+  background: #ff8533;
+  /* Enhanced hover shadow for better feedback */
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+}
+
+.chart-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e1e1e;
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.chart-bar:hover .chart-tooltip {
+  opacity: 1;
+}
+
+.chart-label {
+  font-size: 0.875rem;
+  /* Updated to label gray per typography specs */
+  color: #777777;
+}
+
+/* Sentiment Breakdown */
+.dashboard-sentiment-section {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  /* Enhanced shadow for professional depth */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sentiment-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sentiment-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  /* Updated to primary dark gray */
+  color: #1e1e1e;
+}
+
+.donut-chart {
+  position: relative;
+  height: 150px;
+}
+
+.donut-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.donut-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #ff6a00;
+}
+
+.donut-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6a00;
+}
+
+.sentiment-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  /* Updated background to warm-gray neutral */
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.legend-item:hover {
+  /* Updated hover to light orange */
+  background-color: #ffe8d6;
+}
+
+.legend-icon {
+  font-size: 1.25rem;
+}
+
+.legend-text {
+  flex: 1;
+}
+
+.legend-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  /* Updated to primary dark gray */
+  color: #1e1e1e;
+}
+
+.legend-value {
+  font-size: 0.75rem;
+  /* Updated to label gray per typography specs */
+  color: #777777;
+}
+
+.pain-points {
+  /* Updated border to soft gray */
+  border-top: 1px solid #e6e6e6;
+  padding-top: 1rem;
+}
+
+.pain-points-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  /* Updated color to primary dark gray */
+  color: #1e1e1e;
+  margin-bottom: 0.75rem;
+}
+
+.pain-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pain-point-item {
+  font-size: 0.75rem;
+  /* Updated to secondary gray */
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Action Recommendations */
+.actions-section {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  /* Enhanced shadow for professional depth */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.actions-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  /* Updated to primary dark gray */
+  color: #1e1e1e;
+  margin-bottom: 0.5rem;
+}
+
+.actions-subtitle {
+  font-size: 0.875rem;
+  /* Updated to secondary gray */
+  color: #555555;
+  margin-bottom: 1.5rem;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.action-card {
+  border: 2px solid #e6e6e6;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s;
+  background: #ffffff;
+}
+
+.action-card:hover {
+  border-color: #ff6a00;
+  /* Enhanced hover shadow for professional accent */
+  box-shadow: 0 8px 16px rgba(255, 106, 0, 0.15);
+  transform: translateY(-2px);
+  background: white;
+}
+
+.action-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.action-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.action-title {
+  font-size: 1rem;
+  font-weight: 600;
+  /* Updated to primary dark gray */
+  color: #1e1e1e;
+}
+
+.action-description {
+  font-size: 0.875rem;
+  /* Updated to secondary gray */
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Updated button to solid brand orange */
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: fit-content;
+}
+
+.action-button:hover {
+  /* Updated hover to deeper professional orange for refined feedback */
+  background: #e65c00;
+  /* Enhanced hover shadow for professional feedback */
+  box-shadow: 0 4px 12px rgba(230, 92, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    height: auto;
+    border-right: none;
+    border-bottom: 3px solid #ff6a00;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex: 1;
+    gap: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .sidebar-item {
+    border-radius: 0;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .sidebar-footer {
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0;
+  }
+
+  .dashboard-content {
+    padding: 1.5rem;
+  }
+
+  .kpi-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-content {
+    padding: 1rem;
+  }
+
+  .dashboard-grid {
+    gap: 1rem;
+  }
+
+  .dashboard-section {
+    margin-bottom: 1rem;
+  }
+
+  .kpi-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .date-range-selector {
+    width: 100%;
+  }
+
+  .date-range-btn {
+    flex: 1;
+  }
+}
+
+/* Added fade animation for navbar title transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.15s ease-in-out;
+}
+
+/* Add dark mode color variables and styles */
+.dark .dashboard-layout {
+  background-color: #0f1724;
+}
+
+.dark .top-bar {
+  background: linear-gradient(90deg, #0f1724 0%, #1a2332 100%);
+  border-bottom-color: #1f2937;
+}
+
+.dark .top-bar-left,
+.dark .top-bar-right {
+}
+
+.dark .top-bar-icon {
+  background: #1a2332;
+  border-color: #1f2937;
+  color: #a0aec0;
+}
+
+.dark .top-bar-icon:hover {
+  background-color: #1f2937;
+  border-color: #ff8a2a;
+  color: #ff8a2a;
+}
+
+.dark .top-bar-title {
+  color: #ff8a2a;
+}
+
+.dark .top-bar-avatar {
+  border-color: #ff8a2a;
+  background: #1a2332;
+}
+
+.dark .top-bar-avatar:hover {
+  box-shadow: 0 0 8px rgba(255, 138, 42, 0.3);
+}
+
+.dark .dashboard-content {
+  background: linear-gradient(180deg, #0f1724 0%, #1a2332 100%);
+}
+
+.dark .sidebar {
+  background: linear-gradient(180deg, #ff6a00 0%, #ff7e1b 100%);
+  border-right-color: #e65c00;
+  box-shadow: 2px 0 12px rgba(230, 92, 0, 0.3), inset -1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .sidebar-header {
+  background: linear-gradient(180deg, #ff6a00 0%, #ff7e1b 100%);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark .sidebar-toggle {
+  background: rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.dark .sidebar-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark .sidebar-brand {
+  color: #ffffff;
+}
+
+.dark .sidebar-nav {
+  background: linear-gradient(180deg, #ff6a00 0%, #ff7e1b 100%);
+}
+
+.dark .sidebar-item {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dark .sidebar-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.dark .sidebar-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-left-color: #ffffff;
+}
+
+.dark .sidebar-footer {
+  background: linear-gradient(180deg, #ff6a00 0%, #ff7e1b 100%);
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark .sidebar-logout {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark .sidebar-logout:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.dark .kpi-card {
+  background: #1a2332;
+  border-color: #1f2937;
+  color: #f0f4f8;
+}
+
+.dark .kpi-card:hover {
+  border-color: #ff8a2a;
+  box-shadow: 0 8px 16px rgba(255, 138, 42, 0.1);
+}
+
+.dark .kpi-label {
+  color: #a0aec0;
+}
+
+.dark .kpi-value {
+  color: #f0f4f8;
+}
+
+.dark .kpi-trend.positive {
+  color: #22c55e;
+  background-color: rgba(34, 197, 94, 0.2);
+}
+
+.dark .kpi-trend.negative {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.dark .dashboard-chart-section {
+  background: #1a2332;
+  border-color: #1f2937;
+}
+
+.dark .chart-title {
+  color: #f0f4f8;
+}
+
+.dark .chart-header {
+  border-bottom-color: #1f2937;
+}
+
+.dark .date-range-btn {
+  background: #0f1724;
+  border-color: #1f2937;
+  color: #a0aec0;
+}
+
+.dark .date-range-btn:hover {
+  border-color: #ff8a2a;
+  background-color: rgba(255, 138, 42, 0.1);
+  color: #ff8a2a;
+}
+
+.dark .date-range-btn.active {
+  background: #ff8a2a;
+  border-color: #ff8a2a;
+  color: #0f1724;
+}
+
+.dark .chart-bar {
+  background: #ff8a2a;
+}
+
+.dark .chart-bar:hover {
+  background: #ffb060;
+  box-shadow: 0 4px 12px rgba(255, 138, 42, 0.4);
+}
+
+.dark .chart-label {
+  color: #6b7280;
+}
+
+.dark .y-label {
+  color: #4b5563;
+}
+
+.dark .dashboard-sentiment-section {
+  background: #1a2332;
+  border-color: #1f2937;
+}
+
+.dark .sentiment-title {
+  color: #f0f4f8;
+}
+
+.dark .donut-value {
+  color: #ff8a2a;
+}
+
+.dark .legend-item {
+  background-color: #0f1724;
+  border-color: #1f2937;
+}
+
+.dark .legend-item:hover {
+  background-color: rgba(255, 138, 42, 0.1);
+}
+
+.dark .legend-label {
+  color: #f0f4f8;
+}
+
+.dark .legend-value {
+  color: #6b7280;
+}
+
+.dark .pain-points {
+  border-top-color: #1f2937;
+}
+
+.dark .pain-points-title {
+  color: #f0f4f8;
+}
+
+.dark .pain-point-item {
+  color: #a0aec0;
+}
+
+.dark .actions-section {
+  background: #1a2332;
+  border-color: #1f2937;
+}
+
+.dark .actions-title {
+  color: #f0f4f8;
+}
+
+.dark .actions-subtitle {
+  color: #a0aec0;
+}
+
+.dark .action-card {
+  background: #0f1724;
+  border-color: #1f2937;
+}
+
+.dark .action-card:hover {
+  border-color: #ff8a2a;
+  box-shadow: 0 8px 16px rgba(255, 138, 42, 0.1);
+}
+
+.dark .action-title {
+  color: #f0f4f8;
+}
+
+.dark .action-description {
+  color: #a0aec0;
+}
+
+.dark .action-button {
+  background: #ff8a2a;
+  color: #0f1724;
+}
+
+.dark .action-button:hover {
+  background: #ff6a00;
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+}
+
+.dark .theme-toggle {
+  color: #a0aec0;
+}
+
+.dark .theme-toggle:hover {
+  color: #ff8a2a;
+}

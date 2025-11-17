@@ -1,0 +1,222 @@
+/* Component-specific styles */
+
+/* Custom Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Button Variants */
+.btn-primary {
+  background: #111827;
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  background: #374151;
+}
+
+.btn-outline {
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline:hover {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #374151;
+}
+
+.btn-ghost:hover {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.btn-link {
+  background: transparent;
+  color: #3b82f6;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+}
+
+/* Button Sizes */
+.btn-sm {
+  height: 2rem;
+  padding: 0 0.75rem;
+  border-radius: 0.375rem;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.btn-default {
+  height: 2.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn-lg {
+  height: 2.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+
+.btn-icon {
+  height: 2.25rem;
+  width: 2.25rem;
+  padding: 0;
+}
+
+/* Navigation Styles */
+.gradient-nav {
+  width: 100%;
+  background: linear-gradient(to right, #ef4444, #f97316, #eab308);
+  padding: 1rem 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #f3f4f6;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+/* Feature Card Styles */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  display: inline-flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon.gradient-red-orange {
+  background: linear-gradient(to right, #ef4444, #f97316);
+}
+
+.feature-icon.gradient-orange-yellow {
+  background: linear-gradient(to right, #f97316, #eab308);
+}
+
+.feature-icon.gradient-yellow-red {
+  background: linear-gradient(to right, #eab308, #ef4444);
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  color: #4b5563;
+  line-height: 1.625;
+}
+
+.feature-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.feature-card:hover .feature-overlay {
+  opacity: 0.05;
+}
+
+.feature-overlay.gradient-red-orange {
+  background: linear-gradient(to right, #ef4444, #f97316);
+}
+
+.feature-overlay.gradient-orange-yellow {
+  background: linear-gradient(to right, #f97316, #eab308);
+}
+
+.feature-overlay.gradient-yellow-red {
+  background: linear-gradient(to right, #eab308, #ef4444);
+}
